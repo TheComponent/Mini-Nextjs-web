@@ -1,3 +1,4 @@
+import { UUID } from "crypto";
 import { MouseEventHandler } from "react";
 
 export interface CustomButtonProps {
@@ -16,6 +17,7 @@ export interface SearchManufacturerProps {
 }
 
 export interface CarProps {
+  id: string;
   city_mpg: number;
   class: string;
   combination_mpg: number;
