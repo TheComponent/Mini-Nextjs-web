@@ -1,7 +1,7 @@
 "use client";
 
 import { CarProps } from '@/types';
-import { generateCarImageUrl } from '@/utils';
+import { generateCarImageUrl, showCapitalize } from '@/utils';
 import { Dialog, DialogPanel, Transition, TransitionChild } from '@headlessui/react';
 import Image from 'next/image';
 import { relative } from 'path';
@@ -87,7 +87,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                       {Object.entries(car).map(([key, value]) => (
                         <div className='flex justify-between gap-5 w-full text-right' key={key}>
                           <h4 className='text-grey capitalize'>{key.split("_").join(" ")}</h4>
-                          <p className='text-black-100 font-semibold'>{value}</p>
+                          <p className='text-black-100 font-semibold'>{showCapitalize(value.toString())}</p>
                         </div>
                       ))}
                     </div>
